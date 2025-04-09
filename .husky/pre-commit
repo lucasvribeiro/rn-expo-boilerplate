@@ -1,7 +1,1 @@
-# .husky/pre-commit
-
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-# Linha principal: executa o lint-staged
 npx lint-staged
