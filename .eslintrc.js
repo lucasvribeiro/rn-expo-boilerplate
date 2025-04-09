@@ -1,8 +1,5 @@
 module.exports = {
-  extends: ['expo', 'prettier'],
   plugins: ['prettier'],
-  ignorePatterns: ['node_modules', 'app-example/**'],
-  rules: {
-    'prettier/prettier': 'error'
-  }
+  extends: ['expo', 'prettier', 'eslint:recommended', 'plugin:prettier/recommended'],
+  ignorePatterns: ['node_modules', 'android', 'ios', 'app-example']
 }

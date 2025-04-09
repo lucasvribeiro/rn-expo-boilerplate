@@ -10,7 +10,6 @@
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "prepare": "husky"
   },
   "jest": {
@@ -61,8 +60,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
+      "npm run lint"
     ]
   },
   "private": true

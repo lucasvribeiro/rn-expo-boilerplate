@@ -1,8 +1,6 @@
 import { Text, View } from 'react-native'
 
 export default function Index() {
-  console.log(variavelQueNaoExiste)
-
   return (
     <View
       style={{
