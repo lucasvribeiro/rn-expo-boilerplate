@@ -5,6 +5,7 @@ import { SplashScreen, Stack } from 'expo-router'
 import { PersistGate } from 'redux-persist/integration/react'
 
 import { persistor, store } from '@/store'
+import { ExampleProvider } from '@/contexts/ExampleContext'
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
@@ -24,7 +25,9 @@ export default function RootLayout() {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <Stack screenOptions={{ headerShown: false }} />
+        <ExampleProvider>
+          <Stack screenOptions={{ headerShown: false }} />
+        </ExampleProvider>
       </PersistGate>
     </Provider>
   )

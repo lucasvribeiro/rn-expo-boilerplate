@@ -18,3 +18,8 @@ export interface Example {
 }
 
 export type ExampleType = 'example1' | 'example2' | 'example3'
+
+export type ExampleContextType = {
+  value: string
+  setValue: (value: string) => void
+}
