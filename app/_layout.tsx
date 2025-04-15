@@ -1,14 +1,17 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useFonts } from 'expo-font'
 import { Provider } from 'react-redux'
 import { SplashScreen, Stack } from 'expo-router'
 import { PersistGate } from 'redux-persist/integration/react'
 
+import initI18n from '@/i18n'
 import { persistor, store } from '@/store'
-import { ExampleProvider } from '@/contexts/ExampleContext'
+import { LanguageProvider } from '@/contexts/LanguageContext'
 
 export default function RootLayout() {
-  const [loaded, error] = useFonts({
+  const [i18nInitialized, setI18nInitialized] = useState(false)
+
+  const [fontsLoaded, fontsError] = useFonts({
     'Nunito-Black': require('../assets/fonts/Nunito-Black.ttf'),
     'Nunito-Bold': require('../assets/fonts/Nunito-Bold.ttf'),
     'Nunito-Light': require('../assets/fonts/Nunito-Light.ttf'),
@@ -17,17 +20,29 @@ export default function RootLayout() {
   })
 
   useEffect(() => {
-    if (loaded || error) SplashScreen.hideAsync()
-  }, [loaded, error])
+    const setupI18n = async () => {
+      await initI18n()
+      setI18nInitialized(true)
+    }
 
-  if (!loaded && !error) return null
+    setupI18n()
+  }, [])
+
+  useEffect(() => {
+    if (fontsLoaded || fontsError) {
+      SplashScreen.hideAsync()
+    }
+  }, [fontsLoaded, fontsError])
+
+  if (!i18nInitialized) return null
+  if (!fontsLoaded && !fontsError) return null
 
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <ExampleProvider>
+        <LanguageProvider>
           <Stack screenOptions={{ headerShown: false }} />
-        </ExampleProvider>
+        </LanguageProvider>
       </PersistGate>
     </Provider>
   )

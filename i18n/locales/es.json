@@ -1,0 +1,23 @@
+{
+  "common": {
+    "hello": "Hola",
+    "welcome": "Bienvenido a nuestra aplicación"
+  },
+  "auth": {
+    "login": "Iniciar Sesión",
+    "signup": "Registrarse",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "forgotPassword": "¿Olvidó su contraseña?"
+  },
+  "home": {
+    "title": "Inicio",
+    "greeting": "¡Hola, {{name}}!"
+  },
+  "settings": {
+    "title": "Configuraciones",
+    "language": "Idioma",
+    "theme": "Tema",
+    "notifications": "Notificaciones"
+  }
+}

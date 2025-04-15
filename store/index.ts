@@ -3,16 +3,18 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 import themeReducer from './slices/themeSlice'
+import languageReducer from './slices/languageSlice'
 
 const persistConfig = {
   version: 1,
   key: 'root',
   storage: AsyncStorage,
-  whitelist: ['theme']
+  whitelist: ['theme', 'language']
 }
 
 const rootReducer = combineReducers({
-  theme: themeReducer
+  theme: themeReducer,
+  language: languageReducer
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

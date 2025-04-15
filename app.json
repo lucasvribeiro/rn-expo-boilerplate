@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Example App! Boilerplate by @lucasribeirodev",
-    "slug": "example-app",
+    "slug": "rn-expo-boilerplate",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icons/adaptive-icon.png",
@@ -15,7 +15,7 @@
         "light": "./assets/icons/ios-light.png",
         "tinted": "./assets/icons/ios-tinted.png"
       },
-      "bundleIdentifier": "com.lucasvribeiro.exampleapp"
+      "bundleIdentifier": "com.lucasvribeiro.rn-expo-boilerplate"
     },
     "android": {
       "adaptiveIcon": {
@@ -24,7 +24,7 @@
         "backgroundImage": "./assets/icons/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.lucasvribeiro.boilerplate"
+      "package": "com.lucasvribeiro.rnexpoboilerplate"
     },
     "web": {
       "bundler": "metro",
@@ -45,7 +45,8 @@
             "backgroundColor": "#111111"
           }
         }
-      ]
+      ],
+      "expo-localization"
     ],
     "experiments": {
       "typedRoutes": true
