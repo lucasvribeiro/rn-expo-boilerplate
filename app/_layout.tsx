@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import mobileAds from 'react-native-google-mobile-ads'
 import { useFonts } from 'expo-font'
 import { Provider } from 'react-redux'
 import { SplashScreen, Stack } from 'expo-router'
@@ -24,6 +25,10 @@ export default function RootLayout() {
       await initI18n()
       setI18nInitialized(true)
     }
+
+    mobileAds()
+      .initialize()
+      .then((adapterStatuses) => {})
 
     setupI18n()
   }, [])

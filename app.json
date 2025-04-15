@@ -33,6 +33,7 @@
     },
     "plugins": [
       "expo-router",
+      "expo-localization",
       [
         "expo-splash-screen",
         {
@@ -46,7 +47,21 @@
           }
         }
       ],
-      "expo-localization"
+      [
+        "react-native-google-mobile-ads",
+        {
+          "androidAppId": "ca-app-pub-2249081026824150~6959865291",
+          "iosAppId": "ca-app-pub-2249081026824150~6959865291"
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static"
+          }
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true

@@ -1,0 +1,11 @@
+export const ADS_IDS = {
+  BANNERS: {
+    GAME: 'ca-app-pub-2249081026824150/8058653537'
+  },
+  INTERSTITIALS: {
+    POST_GAME: 'ca-app-pub-2249081026824150/5780462567'
+  },
+  REWARDEDS: {
+    GAME_BUTTON: 'ca-app-pub-2249081026824150/2736497210'
+  }
+} as const
