@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Pressable } from 'react-native'
 
 import { COLORS } from '@/constants'
 import useTheme from '@/hooks/useTheme'
+import GradientExample from '@/components/GradientExample'
 
 export const Home = () => {
   const { setTheme, theme } = useTheme()
@@ -18,6 +19,8 @@ export const Home = () => {
         <Pressable style={styles.button} onPress={() => setTheme('light')}>
           <Text>Light Theme</Text>
         </Pressable>
+
+        <GradientExample />
       </View>
     </View>
   )
