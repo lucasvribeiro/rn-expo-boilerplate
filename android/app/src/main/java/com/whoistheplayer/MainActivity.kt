@@ -1,4 +1,4 @@
-package com.lucasvribeiro.rnexpoboilerplate
+package com.whoistheplayer
 import expo.modules.splashscreen.SplashScreenManager
 
 import android.os.Build

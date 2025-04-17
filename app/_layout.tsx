@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react'
-import mobileAds from 'react-native-google-mobile-ads'
-import { useFonts } from 'expo-font'
+import { Platform } from 'react-native'
 import { Provider } from 'react-redux'
+import { useFonts } from 'expo-font'
+import Purchases from 'react-native-purchases'
 import { SplashScreen, Stack } from 'expo-router'
+import mobileAds from 'react-native-google-mobile-ads'
 import { PersistGate } from 'redux-persist/integration/react'
 
 import initI18n from '@/i18n'
+import { IAP_KEYS } from '@/constants/iap'
 import { persistor, store } from '@/store'
 import { LanguageProvider } from '@/contexts/LanguageContext'
 
@@ -26,10 +29,24 @@ export default function RootLayout() {
       setI18nInitialized(true)
     }
 
-    mobileAds()
-      .initialize()
-      .then((adapterStatuses) => {})
+    const setupMobileAds = async () => {
+      await mobileAds()
+        .initialize()
+        .then((adapterStatuses) => {})
+    }
 
+    const setupPurchases = async () => {
+      Purchases.setLogLevel(Purchases.LOG_LEVEL.DEBUG)
+
+      if (Platform.OS === 'ios') {
+        await Purchases.configure({ apiKey: IAP_KEYS.APPLE })
+      } else if (Platform.OS === 'android') {
+        await Purchases.configure({ apiKey: IAP_KEYS.GOOGLE })
+      }
+    }
+
+    setupMobileAds()
+    setupPurchases()
     setupI18n()
   }, [])
 

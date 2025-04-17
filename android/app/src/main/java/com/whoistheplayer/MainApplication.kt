@@ -1,4 +1,4 @@
-package com.lucasvribeiro.rnexpoboilerplate
+package com.whoistheplayer
 
 import android.app.Application
 import android.content.res.Configuration

@@ -1,11 +1,19 @@
 import { StyleSheet, Text, View, Pressable } from 'react-native'
+import { useAudioPlayer } from 'expo-audio'
 
 import { COLORS } from '@/constants'
 import useTheme from '@/hooks/useTheme'
 import GradientExample from '@/components/GradientExample'
 
+const audioExample = require('@/assets/sounds/goal.mp3')
+
 export const Home = () => {
   const { setTheme, theme } = useTheme()
+  const player = useAudioPlayer(audioExample)
+
+  const playSound = () => {
+    player.play()
+  }
 
   return (
     <View style={styles.container}>
@@ -18,6 +26,10 @@ export const Home = () => {
 
         <Pressable style={styles.button} onPress={() => setTheme('light')}>
           <Text>Light Theme</Text>
+        </Pressable>
+
+        <Pressable style={styles.button} onPress={() => playSound()}>
+          <Text>Play Sound</Text>
         </Pressable>
 
         <GradientExample />

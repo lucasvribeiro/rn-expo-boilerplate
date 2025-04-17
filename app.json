@@ -15,7 +15,7 @@
         "light": "./assets/icons/ios-light.png",
         "tinted": "./assets/icons/ios-tinted.png"
       },
-      "bundleIdentifier": "com.lucasvribeiro.rn-expo-boilerplate"
+      "bundleIdentifier": "com.whoistheplayer"
     },
     "android": {
       "adaptiveIcon": {
@@ -24,7 +24,7 @@
         "backgroundImage": "./assets/icons/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.lucasvribeiro.rnexpoboilerplate"
+      "package": "com.whoistheplayer"
     },
     "web": {
       "bundler": "metro",
@@ -60,6 +60,12 @@
           "ios": {
             "useFrameworks": "static"
           }
+        }
+      ],
+      [
+        "expo-audio",
+        {
+          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone."
         }
       ]
     ],

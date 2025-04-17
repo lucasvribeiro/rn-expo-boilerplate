@@ -28,7 +28,7 @@
         <key>CFBundleURLSchemes</key>
         <array>
           <string>example-app</string>
-          <string>com.lucasvribeiro.rn-expo-boilerplate</string>
+          <string>com.whoistheplayer</string>
         </array>
       </dict>
       <dict>
